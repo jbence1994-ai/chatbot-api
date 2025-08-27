@@ -3,6 +3,8 @@ chatbot-api
 
 ### Chatbot backend
 
+[![Continuous Integration](https://github.com/jbence1994-ai/chatbot-api/actions/workflows/build.yaml/badge.svg)](https://github.com/jbence1994-ai/chatbot-api/actions/workflows/build.yaml)
+
 Prerequisites
 -------------
 
