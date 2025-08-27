@@ -15,7 +15,6 @@ public class OllamaChatService implements ChatService {
     public Chat chat(String prompt) {
         try {
             var response = ollamaChatModel.call(prompt);
-            log.info("Chat response: {}", response);
 
             return new Chat(response);
         } catch (Exception exception) {
