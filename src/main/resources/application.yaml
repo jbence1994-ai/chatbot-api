@@ -3,3 +3,10 @@ spring:
     name: chatbot-api
   profiles:
     active: default
+  ai:
+    ollama:
+      base-url: ${OLLAMA_URL}
+      chat:
+        options:
+          model: ${LARGE_LANGUAGE_MODEL_NAME}
+          temperature: ${LARGE_LANGUAGE_MODEL_TEMPERATURE}
