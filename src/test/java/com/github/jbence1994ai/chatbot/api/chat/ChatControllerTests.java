@@ -11,6 +11,7 @@ import java.util.UUID;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.not;
 import static org.hamcrest.Matchers.nullValue;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -24,7 +25,7 @@ public class ChatControllerTests {
 
     @Test
     public void chatTest() {
-        when(chatService.chat("Greet.")).thenReturn(new Chat("Hello, World!"));
+        when(chatService.chat(any())).thenReturn(new ChatResponse("Hello, World!"));
 
         var result = chatController.chat(new ChatRequest("Greet.", UUID.randomUUID()));
 

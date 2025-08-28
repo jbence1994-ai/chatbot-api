@@ -18,18 +18,18 @@ public class OllamaChatService implements ChatService {
     private final OllamaChatModel ollamaChatModel;
 
     @Override
-    public Chat chat(String message) {
+    public ChatResponse chat(ChatRequest request) {
         try {
             var systemMessage = new SystemMessage(systemPromptConfig.systemPrompt());
-            var userMessage = new UserMessage(message);
+            var userMessage = new UserMessage(request.prompt());
             var prompt = new Prompt(List.of(systemMessage, userMessage));
 
-            var response = ollamaChatModel.call(prompt)
+            var message = ollamaChatModel.call(prompt)
                     .getResult()
                     .getOutput()
                     .getText();
 
-            return new Chat(response);
+            return new ChatResponse(message);
         } catch (Exception exception) {
             log.error(exception.getMessage());
             throw new OllamaException();
