@@ -30,10 +30,10 @@
         <jacoco-maven-plugin.version>0.8.13</jacoco-maven-plugin.version>
 
         <!-- JaCoCo properties -->
-        <jacoco.line-coverage>0.60</jacoco.line-coverage>
+        <jacoco.line-coverage>1.00</jacoco.line-coverage>
         <jacoco.branch-coverage>1.00</jacoco.branch-coverage>
-        <jacoco.complexity-coverage>0.76</jacoco.complexity-coverage>
-        <jacoco.method-coverage>0.76</jacoco.method-coverage>
+        <jacoco.complexity-coverage>1.00</jacoco.complexity-coverage>
+        <jacoco.method-coverage>1.00</jacoco.method-coverage>
         <jacoco.class-coverage>1.00</jacoco.class-coverage>
     </properties>
 
@@ -41,10 +41,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-webflux</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
