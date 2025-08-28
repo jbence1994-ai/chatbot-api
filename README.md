@@ -17,6 +17,8 @@ Run project locally
 
 - Start Ollama with your favored large language model (text-ot-text)
 - Be sure to copy `.env.example` to `.env` and update it with the LLM parameters before running the application
+- If you want to provide additional system prompts to the favored large language model, be sure to create a
+  `system_prompt.txt` and add your instructions.
 
 ### Build application
 
