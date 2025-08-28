@@ -25,6 +25,6 @@ public class ChatController {
 
         log.info("ChatResponse for conversation ID: {}", request.conversationId());
 
-        return new ChatResponse(chatResponse.message());
+        return chatResponse;
     }
 }
