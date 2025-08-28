@@ -10,14 +10,15 @@ Prerequisites
 
 - [Eclipse Temurin JDK 21](https://adoptium.net/temurin/releases/?version=21)
 - [Maven 3.9.6](https://maven.apache.org/download.cgi)
+- [Ollama](https://ollama.com)
 
 Run project locally
 -------------------
 
-Be sure to copy `.env.example` to `.env` and update it with your local database connection parameters before running the
-application.
+- Start Ollama with your favored large language model (text-ot-text)
+- Be sure to copy `.env.example` to `.env` and update it with the LLM parameters before running the application
 
-### Build application and database schema populating it with test data with Flyway Maven plugin
+### Build application
 
 ```bash
 mvn clean install
@@ -26,9 +27,15 @@ mvn clean install
 ### Starting application with Spring Boot Maven plugin
 
 ```bash
-mvn spring-boot:run -Dspring-boot.run.profiles=dev
+mvn spring-boot:run -Dspring-boot.run.profiles=default
 ```
 
-- To try application endpoints, open http://localhost:8080/swagger-ui/index.html in your web browser.
+- To try the application endpoint, send a POST request to `http://localhost:8080/api/chat` with a REST client (Postman,
+  Insomnia, Bruno, etc.) with the following request body:
 
-- To view api documentation, open http://localhost:8080/v3/api-docs in your web browser.
+```json
+{
+  "prompt": "<string>",
+  "conversationId": "<uuid>"
+}
+```
