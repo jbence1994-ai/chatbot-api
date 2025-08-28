@@ -44,8 +44,7 @@ public class OllamaChatServiceTests {
 
     @Test
     public void chatTest_HappyPath() {
-        when(ollamaChatModel.call(any(Prompt.class)))
-                .thenReturn(new ChatResponse(List.of(new Generation(new AssistantMessage("Hello, World!")))));
+        when(ollamaChatModel.call(any(Prompt.class))).thenReturn(new ChatResponse(List.of(new Generation(new AssistantMessage("Hello, World!")))));
 
         var result = assertDoesNotThrow(() -> chatService.chat(new ChatRequest("Greet.", UUID.randomUUID())));
 
