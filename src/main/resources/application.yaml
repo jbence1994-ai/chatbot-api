@@ -8,11 +8,11 @@ spring:
       base-url: ${OLLAMA_URL}
       chat:
         options:
-          model: ${LARGE_LANGUAGE_MODEL_NAME}
-          num-ctx: ${LARGE_LANGUAGE_MODEL_CONTEXT_WINDOW}
-          num_predict: ${LARGE_LANGUAGE_MODEL_OUTPUT_TOKENS}
-          temperature: ${LARGE_LANGUAGE_MODEL_TEMPERATURE}
+          model: ${LLM_NAME}
+          num-ctx: ${LLM_CONTEXT_WINDOW}
+          num_predict: ${LLM_OUTPUT_TOKENS}
+          temperature: ${LLM_TEMPERATURE}
 
 app:
   ai:
-    system-prompt: ${LARGE_LANGUAGE_MODEL_SYSTEM_PROMPT}
+    system-prompt: ${LLM_SYSTEM_PROMPT}
