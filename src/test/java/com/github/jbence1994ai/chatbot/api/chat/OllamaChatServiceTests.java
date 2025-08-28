@@ -13,6 +13,7 @@ import org.springframework.ai.chat.prompt.Prompt;
 import org.springframework.ai.ollama.OllamaChatModel;
 
 import java.util.List;
+import java.util.UUID;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
@@ -45,9 +46,9 @@ public class OllamaChatServiceTests {
     public void chatTest_HappyPath() {
         when(ollamaChatModel.call(any(Prompt.class))).thenReturn(new ChatResponse(List.of(new Generation(new AssistantMessage("Hello, World!")))));
 
-        var result = assertDoesNotThrow(() -> chatService.chat("Greet."));
+        var result = assertDoesNotThrow(() -> chatService.chat(new ChatRequest("Greet.", UUID.randomUUID())));
 
-        assertThat(result.getMessage(), not(nullValue()));
+        assertThat(result.message(), not(nullValue()));
     }
 
     @Test
@@ -56,7 +57,7 @@ public class OllamaChatServiceTests {
 
         var result = assertThrows(
                 OllamaException.class,
-                () -> chatService.chat("Greet.")
+                () -> chatService.chat(new ChatRequest("Greet.", UUID.randomUUID()))
         );
 
         assertThat(result.getMessage(), equalTo("Ollama currently unavailable."));

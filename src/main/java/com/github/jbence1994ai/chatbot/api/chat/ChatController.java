@@ -19,12 +19,12 @@ public class ChatController {
 
     @PostMapping
     public ChatResponse chat(@Valid @RequestBody ChatRequest request) {
-        log.info("ChatRequest received with conversation ID: {}", request.conversationId());
+        log.info("ChatRequest with conversation ID: {}", request.conversationId());
 
-        var chat = chatService.chat(request.prompt());
+        var chatResponse = chatService.chat(request);
 
-        log.info("ChatResponse generated for conversation ID: {}", request.conversationId());
+        log.info("ChatResponse for conversation ID: {}", request.conversationId());
 
-        return new ChatResponse(chat.getMessage());
+        return chatResponse;
     }
 }
