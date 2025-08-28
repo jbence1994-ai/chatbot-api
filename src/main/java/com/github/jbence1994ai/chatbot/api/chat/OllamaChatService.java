@@ -14,13 +14,13 @@ import java.util.List;
 @RequiredArgsConstructor
 @Slf4j
 public class OllamaChatService implements ChatService {
-    private final SystemPromptConfig systemPromptConfig;
+    private final SystemPromptUtil systemPromptUtil;
     private final OllamaChatModel ollamaChatModel;
 
     @Override
     public ChatResponse chat(ChatRequest request) {
         try {
-            var systemMessage = new SystemMessage(systemPromptConfig.systemPrompt());
+            var systemMessage = new SystemMessage(systemPromptUtil.getSystemPrompt());
             var userMessage = new UserMessage(request.prompt());
             var prompt = new Prompt(List.of(systemMessage, userMessage));
 
