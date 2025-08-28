@@ -9,4 +9,10 @@ spring:
       chat:
         options:
           model: ${LARGE_LANGUAGE_MODEL_NAME}
+          num-ctx: ${LARGE_LANGUAGE_MODEL_CONTEXT_WINDOW}
+          num_predict: ${LARGE_LANGUAGE_MODEL_OUTPUT_TOKENS}
           temperature: ${LARGE_LANGUAGE_MODEL_TEMPERATURE}
+
+app:
+  ai:
+    system-prompt: ${LARGE_LANGUAGE_MODEL_SYSTEM_PROMPT}
