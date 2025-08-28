@@ -32,3 +32,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+context.md
+system_prompt.txt

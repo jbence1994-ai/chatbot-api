@@ -12,7 +12,3 @@ spring:
           num-ctx: ${LLM_CONTEXT_WINDOW}
           num_predict: ${LLM_OUTPUT_TOKENS}
           temperature: ${LLM_TEMPERATURE}
-
-app:
-  ai:
-    system-prompt: ${LLM_SYSTEM_PROMPT}

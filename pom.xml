@@ -135,7 +135,7 @@
                 <version>${jacoco-maven-plugin.version}</version>
                 <configuration>
                     <excludes>
-                        <exclude>com/github/jbence1994ai/chatbot/api/**/*Config*</exclude>
+                        <exclude>com/github/jbence1994ai/chatbot/api/**/*SystemPromptUtil*</exclude>
                         <exclude>com/github/jbence1994ai/chatbot/api/Application*</exclude>
                     </excludes>
                 </configuration>

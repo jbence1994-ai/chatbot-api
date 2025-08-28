@@ -29,7 +29,7 @@ import static org.mockito.Mockito.when;
 public class OllamaChatServiceTests {
 
     @Mock
-    private SystemPromptConfig systemPromptConfig;
+    private SystemPromptUtil systemPromptUtil;
 
     @Mock
     private OllamaChatModel ollamaChatModel;
@@ -39,7 +39,7 @@ public class OllamaChatServiceTests {
 
     @BeforeEach
     public void setUp() {
-        when(systemPromptConfig.systemPrompt()).thenReturn("You're a help-desk assistant.");
+        when(systemPromptUtil.getSystemPrompt()).thenReturn("You're a help-desk assistant.");
     }
 
     @Test
