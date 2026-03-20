@@ -12,3 +12,7 @@ spring:
           num-ctx: ${LLM_CONTEXT_WINDOW}
           num_predict: ${LLM_OUTPUT_TOKENS}
           temperature: ${LLM_TEMPERATURE}
+
+chatbot-api:
+  client-app:
+    url: ${CLIENT_APP_URL}
